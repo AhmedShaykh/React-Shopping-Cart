@@ -1,1 +1,1 @@
-# Shopping Cart With TypeScript!
+# React Shopping Cart In TypeScript!
