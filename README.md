@@ -1,1 +1,1 @@
-# React Shopping Cart In TypeScript!
+# React TypeScript Firebase App!
