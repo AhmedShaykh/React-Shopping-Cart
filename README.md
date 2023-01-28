@@ -1,1 +1,1 @@
-# React TypeScript Firebase App!
+# React TypeScript Firebase CRUD App!
