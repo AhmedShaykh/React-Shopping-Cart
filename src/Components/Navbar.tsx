@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../Config/Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import { Button } from '@chakra-ui/react';
 
 const Navbar: FC = () => {
 
@@ -15,19 +16,13 @@ const Navbar: FC = () => {
     return (
         <div className="navbar">
             <div className="links">
-                {
-                    !user ? (
-                        <Link to="/"> Home </Link>
-                    ) : (
-                        <Link to="/"> Home </Link>
-                    )
-                }
+                <Link to="/"> Home </Link>
 
                 {
                     !user ? (
-                        <Link to="/login"> Login </Link>
+                        <Link to="/"> Home </Link> && <Link to="/login"> Login </Link>
                     ) : (
-                        <Link to="/post"> Post </Link>
+                        <Link to="/home"> Home </Link> && <Link to="/post"> Post </Link>
                     )
                 }
 
@@ -44,10 +39,17 @@ const Navbar: FC = () => {
                             style={{ marginRight: "10px" }}
                         />
 
-                        <button
-                            style={{ marginLeft: "10px", backgroundColor: "rgb(245, 12, 16)" }}
+                        <Button
+                            ml={4}
+                            w="30"
+                            bg="red"
+                            color="white"
+                            _hover={{
+                                bg: "white",
+                                color: "black"
+                            }}
                             onClick={signUserOut}
-                        > Log Out</button>
+                        > Log Out</Button>
                     </>
                 )}
             </div>

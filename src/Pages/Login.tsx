@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { auth, provider } from "../Config/Firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { Button, Heading } from '@chakra-ui/react';
 
 const Login: FC = () => {
 
@@ -15,12 +16,18 @@ const Login: FC = () => {
 
     return (
         <div>
-            <h2>
+            <Heading my="4">
                 Sign In With Google To Continue!
-            </h2>
-            <button onClick={signInWithGoogle}>
+            </Heading>
+            <Button
+                bg="rgb(9, 115, 191)"
+                color="white"
+                _hover={{
+                    bg: "gray.600",
+                }}
+                onClick={signInWithGoogle}>
                 Sign In With Google
-            </button>
+            </Button>
         </div>
     )
 };
