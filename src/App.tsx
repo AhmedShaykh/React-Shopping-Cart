@@ -6,7 +6,7 @@ import {
     Routes
 } from "react-router-dom";
 import Navbar from './Components/Navbar';
-import Main from './Pages/Main';
+import Main from './Pages/Home/Main';
 import Login from './Pages/Login';
 import Post from './Pages/Posts/CreatePost';
 import './App.css';

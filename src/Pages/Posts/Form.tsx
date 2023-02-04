@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Button, Input, Textarea } from '@chakra-ui/react';
+import { Box, Button, Input, Text, Textarea } from '@chakra-ui/react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { addDoc, collection } from "firebase/firestore";
@@ -44,7 +44,6 @@ const Form: FC = () => {
         navigate("/");
     };
 
-
     return (
         <Box
             my="8"
@@ -52,29 +51,30 @@ const Form: FC = () => {
         >
             <form onSubmit={handleSubmit(onCreatePost)}>
                 <Input
-                    my={"8"}
+                    my="4"
                     placeholder='Enter Title ...'
                     {...register("title")}
                 />
-                <p style={{ color: "red" }}> {errors.title?.message}</p>
+                <Text my="2" color="red"> {errors.title?.message}</Text>
 
                 <Textarea
+                    my="4"
                     placeholder='Enter Description ...'
-                    mb="4"
                     {...register("description")}
                 />
-                <p style={{ color: "red" }}> {errors.description?.message}</p>
+                <Text my="2" color="red"> {errors.description?.message}</Text>
 
-                <Button
-                    mt="4"
+                <Input
+                    mt="2"
+                    type='submit'
                     bg="teal"
+                    w="50%"
                     color="white"
                     _hover={{
                         bg: "black",
+                        cursor: "pointer"
                     }}
-                >
-                    Submit
-                </Button>
+                />
             </form>
         </Box>
     )
