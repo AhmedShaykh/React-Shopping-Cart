@@ -15,8 +15,22 @@ const Navbar: FC = () => {
     return (
         <div className="navbar">
             <div className="links">
-                <Link to="/"> Home </Link>
-                <Link to="/login"> Login </Link>
+                {
+                    !user ? (
+                        <Link to="/"> Home </Link>
+                    ) : (
+                        <Link to="/"> Home </Link>
+                    )
+                }
+
+                {
+                    !user ? (
+                        <Link to="/login"> Login </Link>
+                    ) : (
+                        <Link to="/post"> Post </Link>
+                    )
+                }
+
             </div>
 
             <div className="user">
@@ -27,7 +41,7 @@ const Navbar: FC = () => {
                             src={user?.photoURL || ""}
                             width="20"
                             height="20"
-                            style={{marginRight: "10px"}}
+                            style={{ marginRight: "10px" }}
                         />
 
                         <button
