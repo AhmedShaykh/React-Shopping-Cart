@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Button, Input, Text, Textarea } from '@chakra-ui/react';
+import { Box, Input, Text, Textarea } from '@chakra-ui/react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { addDoc, collection } from "firebase/firestore";
